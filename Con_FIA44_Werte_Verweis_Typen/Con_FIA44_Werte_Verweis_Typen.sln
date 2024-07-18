@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35103.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Con_FIA44_Werte_Verweis_Typen", "Con_FIA44_Werte_Verweis_Typen\Con_FIA44_Werte_Verweis_Typen.csproj", "{4176135F-384D-465E-8E1D-00278A37F1BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4176135F-384D-465E-8E1D-00278A37F1BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4176135F-384D-465E-8E1D-00278A37F1BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4176135F-384D-465E-8E1D-00278A37F1BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4176135F-384D-465E-8E1D-00278A37F1BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B0E064B-99B7-460D-BFE9-135D6D6CDAEC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+﻿#SID;Name;LaengeInMeter;TiefgangInZentimeter;IstSegler;Verdraengung
+1;Titanic;269,1;1040;False;52310
+2;Queen Mary 2;345;1010;False;148528
+3;USS Constitution;93,6;720;True;2200
+4;Cutty Sark;85,4;652;True;963
+5;HMS Victory;69,3;820;True;3500
+6;USS Enterprise;251,4;940;False;25833
+7;Bismarck;251;940;False;41700
+8;Yamato;263;1010;False;65027
+9;SS Great Britain;98;510;False;3200
+10;Santa Maria;24;220;True;108
