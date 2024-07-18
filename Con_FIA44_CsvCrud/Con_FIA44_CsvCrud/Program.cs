@@ -1,10 +1,33 @@
-﻿namespace Con_FIA44_CsvCrud
+﻿using System.Text;
+
+namespace Con_FIA44_CsvCrud
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.OutputEncoding = Encoding.UTF8;
+
+            List<Article> articles = new List<Article>();
+            Article article = new Article();
+
+            articles = article.GetArticles("Article.csv");
+            article.DisplayArticles(articles);
+
+            article = article.GetArticle(2);
+
+            article.DisplayArticle(article);
+
+            //Article newArticle = new Article()
+            //{
+            //    Name = "New Article",
+            //    Price = 99.99m,
+            //    Stock = 100,
+            //    InAssortSince = DateTime.Now,
+            //    Discountable = true
+            //};
+
+            //article.DisplayArticle(article.GetArticle(article.AddArticle(newArticle)));
         }
     }
 }
