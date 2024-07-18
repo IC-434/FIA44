@@ -1,0 +1,10 @@
+#AID;Name;Price;Stock;InAssortSince;Discountable
+1;T-Shirt;19,99;100;2016-11-10;true
+2;Jeans;49,99;50;2017-02-23;false
+3;Socks;2,99;200;2018-01-01;true
+4;Shoes;29,99;20;2021-08-12;true
+5;Hat;9,99;100;2019-05-03;false
+6;Gloves;4,99;50;2020-07-20;true
+7;Scarf;14,99;50;2022-03-07;true
+8;Jacket;59,99;20;2023-12-09;false
+9;Coat;99,99;10;2024-10-21;true
