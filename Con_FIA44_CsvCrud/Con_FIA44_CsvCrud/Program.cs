@@ -28,6 +28,8 @@ namespace Con_FIA44_CsvCrud
             //};
 
             //article.DisplayArticle(article.GetArticle(article.AddArticle(newArticle)));
+
+            article.DeleteArticle(10);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Con_FIA44_CsvCrud
 
             foreach (Article article in articles)
             {
-                table.AddRow($"[blue]{article.Aid}[/]", $"[plum1]{article.Name}[/]", $"[green]{article.Price:C2}[/]", $"[yellow]{article.Stock} pcs[/]", $"[lime]{article.InAssortSince:dd.MM.yyyy}[/]", $"[purple]{(article.Discountable? "👍" : "👎")}[/]");
+                table.AddRow($"[blue]{article.Aid}[/]", $"[plum1]{article.Name}[/]", $"[green]{article.Price:C2}[/]", $"[yellow]{article.Stock} pcs[/]", $"[lime]{article.InAssortSince:dd.MM.yyyy}[/]", $"[purple]{(article.Discountable ? "👍" : "👎")}[/]");
             }
 
             AnsiConsole.Write(table);
@@ -77,7 +77,8 @@ namespace Con_FIA44_CsvCrud
             List<Article> articles = new List<Article>();
             string[] lines = File.ReadAllLines(path);
 
-            foreach (string line in lines) {
+            foreach (string line in lines)
+            {
 
                 if (line.StartsWith("#") || line == "")
                 {
@@ -101,7 +102,8 @@ namespace Con_FIA44_CsvCrud
             return articles;
         }
 
-        public Article GetArticle(int id) {
+        public Article GetArticle(int id)
+        {
 
             List<Article> articles = GetArticles("Article.csv");
 
@@ -138,6 +140,33 @@ namespace Con_FIA44_CsvCrud
             File.WriteAllText("Article.csv", csvContent);
 
             return newId;
+        }
+
+        public bool DeleteArticle(int id)
+        {
+            List<Article> articles = GetArticles("Article.csv");
+
+            foreach (Article a in articles)
+            {
+                if (a.Aid == id)
+                {
+                    articles.Remove(a);
+                    break;
+                }
+            }
+
+            string csvContent = $"#AID;Name;Price;Stock;InAssortSince;Discountable{Environment.NewLine}";
+
+            foreach (Article a in articles)
+            {
+                csvContent += $"{a.Aid};{a.Name};{a.Price};{a.Stock};{a.InAssortSince:d};{a.Discountable}{Environment.NewLine}";
+            }
+
+            File.WriteAllText("Article.csv", csvContent);
+
+            return true;
+
+            return false;
         }
         #endregion
     }
