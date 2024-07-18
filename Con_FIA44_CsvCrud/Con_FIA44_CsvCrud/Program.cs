@@ -29,7 +29,19 @@ namespace Con_FIA44_CsvCrud
 
             //article.DisplayArticle(article.GetArticle(article.AddArticle(newArticle)));
 
-            article.DeleteArticle(10);
+            //article.DeleteArticle(10);
+
+            //Article updatedArticle = new Article()
+            //{
+            //    Aid = 2,
+            //    Name = "Updated Article",
+            //    Price = 199.99m,
+            //    Stock = 200,
+            //    InAssortSince = DateTime.Now,
+            //    Discountable = false
+            //};
+
+            //article.UpdateArticle(updatedArticle);
         }
     }
 }

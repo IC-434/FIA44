@@ -1,9 +1,4 @@
 ﻿using Spectre.Console;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Con_FIA44_CsvCrud
 {
@@ -165,8 +160,35 @@ namespace Con_FIA44_CsvCrud
             File.WriteAllText("Article.csv", csvContent);
 
             return true;
+        }
 
-            return false;
+        public bool UpdateArticle(Article article)
+        {
+            List<Article> articles = GetArticles("Article.csv");
+
+            foreach (Article a in articles)
+            {
+                if (a.Aid == article.Aid)
+                {
+                    a.Name = article.Name;
+                    a.Price = article.Price;
+                    a.Stock = article.Stock;
+                    a.InAssortSince = article.InAssortSince;
+                    a.Discountable = article.Discountable;
+                    break;
+                }
+            }
+
+            string csvContent = $"#AID;Name;Price;Stock;InAssortSince;Discountable{Environment.NewLine}";
+
+            foreach (Article a in articles)
+            {
+                csvContent += $"{a.Aid};{a.Name};{a.Price};{a.Stock};{a.InAssortSince:d};{a.Discountable}{Environment.NewLine}";
+            }
+
+            File.WriteAllText("Article.csv", csvContent);
+
+            return true;
         }
         #endregion
     }
