@@ -11,37 +11,53 @@ namespace Con_FIA44_CsvCrud
             List<Article> articles = new List<Article>();
             Article article = new Article();
 
-            articles = article.GetArticles("Article.csv");
-            article.DisplayArticles(articles);
+            articles = ShowArticles(article);
 
-            article = article.GetArticle(2);
+            Console.WriteLine("Get Article:");
+            article = article.GetArticle(9);
 
             article.DisplayArticle(article);
 
+            //Console.WriteLine("Add Article:");
             //Article newArticle = new Article()
             //{
-            //    Name = "New Article",
+            //    Name = "Shorts",
             //    Price = 99.99m,
-            //    Stock = 100,
-            //    InAssortSince = DateTime.Now,
-            //    Discountable = true
-            //};
-
-            //article.DisplayArticle(article.GetArticle(article.AddArticle(newArticle)));
-
-            //article.DeleteArticle(10);
-
-            //Article updatedArticle = new Article()
-            //{
-            //    Aid = 2,
-            //    Name = "Updated Article",
-            //    Price = 199.99m,
-            //    Stock = 200,
+            //    Stock = 150,
             //    InAssortSince = DateTime.Now,
             //    Discountable = false
             //};
 
-            //article.UpdateArticle(updatedArticle);
+            //int articleID = article.AddArticle(newArticle);
+            //article.GetArticle(articleID);
+            //articles = ShowArticles(article);
+
+            //article.DisplayArticle(article.GetArticle(article.AddArticle(newArticle)));
+
+            Console.WriteLine($"Article deleted: {article.DeleteArticle(11)}");        
+
+            Console.WriteLine("Update Article:");
+            Article updatedArticle = new Article()
+            {
+                Aid = 2,
+                Name = "Test22",
+                Price = 199.99m,
+                Stock = 200,
+                InAssortSince = DateTime.Now,
+                Discountable = false
+            };
+
+            article.UpdateArticle(updatedArticle);
+
+            articles = ShowArticles(article);
+            //article.DisplayArticles(article.GetArticles("Article.csv"));
+        }
+
+        private static List<Article> ShowArticles(Article article)
+        {
+            List<Article> articles = article.GetArticles("Article.csv");
+            article.DisplayArticles(articles);
+            return articles;
         }
     }
 }
